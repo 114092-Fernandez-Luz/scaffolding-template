@@ -19,9 +19,8 @@ import org.springframework.context.annotation.Configuration;
 public class SpringDocConfig {
 
     @Value("${app.url}") private String url;
-    @Value("${app.dev-name}") private String devName;
-    @Value("${app.dev-email}") private String devEmail;
-
+    @Value("${app.dev-name}")private String devName;
+    @Value("${app.dev-email}")private String devEmail;
 
     @Bean
     public OpenAPI openApi (
