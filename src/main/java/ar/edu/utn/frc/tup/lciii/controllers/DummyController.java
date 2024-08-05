@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/dummy")
+@RequestMapping("/dummies")
 public class DummyController {
 
     @Autowired
@@ -21,9 +21,15 @@ public class DummyController {
         List<Dummy> dummyList = dummyService.getDummyList();
         return null;
     }
-
+    /* Esta anotacion combina la anotación RequestMapping y @RequestMetothod.Get
+    Se utiliza para mapear una solicitud HTTP Get a un método espefcífico de un controlador.
+    * */
     @GetMapping("/{id}")
-    public ResponseEntity<DummyDto> getDummyList(@PathVariable Long id){
+    public ResponseEntity<DummyDto> getDummyList(
+            /* Utilizada para vincular variables de una URL con párametros de un método en un controlador.
+        Permite acceder a valores dinámicos en la URL de una solicitud.
+            */
+            @PathVariable Long id){
         Dummy dummy = dummyService.getDummy(id);
         return null;
     }

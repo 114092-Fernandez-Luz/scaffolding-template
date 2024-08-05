@@ -9,7 +9,7 @@ public class PingController {
     /**
      * This method is used to check if the server is up and running.
      *
-     
+
      */
     @GetMapping("/ping")
     public String pong() {
